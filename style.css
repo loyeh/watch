@@ -1,0 +1,157 @@
+@font-face {
+	font-family: "LCDMono2";
+	font-style: normal;
+	font-weight: 700;
+	src: local("LCDMono2"), url("img/LCDM2B__.woff") format("woff");
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #fff;
+	position: relative;
+}
+img {
+	height: 600px;
+}
+.main {
+	width: 210px;
+	height: 210px;
+	border: 2px solid black;
+	border-radius: 100%;
+	background-image: linear-gradient(to bottom right, #c5ffc5, #00ff00, #003300);
+}
+
+.center,
+img {
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+img {
+	transform: translate(-50%, -46.5%);
+}
+p.center,
+.date {
+	text-align: center;
+	font-family: "LCDMono2", sans-serif;
+	color: #afb;
+	font-size: 3em;
+	transform: translate(-50%, -25%);
+	border-top: black 3px solid;
+	padding-top: 5px;
+	text-shadow: 0 0 7px black;
+}
+.date {
+	color: #cfc;
+	font-size: 1.5em;
+	border: 0;
+	transform: translate(-50%, -200%);
+}
+#larg {
+	position: absolute;
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	color: red;
+	font-family: "LCDMono2", sans-serif;
+	font-size: 22vw;
+	padding-top: 35vh;
+	padding-left: 4vw;
+}
+a {
+	position: absolute;
+	top: 20vh;
+	left: 50vw;
+	font-family: Arial, Helvetica, sans-serif;
+	transform: translate(-50%, -50%);
+	text-decoration: none;
+	padding: 20px;
+	font-size: 4em;
+	color: rgb(250, 181, 250);
+	background-color: rgb(83, 11, 59);
+	text-align: right;
+	text-shadow: 2px 2px rgb(65, 25, 102);
+	border-radius: 15px;
+}
+
+.button {
+	font-size: 2em;
+	position: absolute;
+	color: white;
+	background-color: #01306a;
+	font-family: inherit;
+	top: -130px;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.15, 0.65);
+	padding: 15px;
+	border-radius: 400%;
+	box-shadow: -5px 3px 5px black;
+}
+
+.button:hover {
+	color: #647577;
+	cursor: pointer;
+	background-color: #fff;
+	transform: translate(-50%, -50%) scale(1.2, 0.73);
+	transition: 0.5s ease;
+}
+#mode {
+	top: 365px;
+	transform: translate(-50%, -50%) scale(0.8, 0.65);
+}
+.scale {
+	position: relative;
+	text-align: center;
+}
+.menue {
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	font-family: "LCDMono2", sans-serif;
+
+	text-align: center;
+}
+input {
+	background-color: transparent;
+	border: none;
+	font-family: "LCDMono2", sans-serif;
+	font-size: 1.5em;
+	border-bottom: 2px solid black;
+}
+input:hover {
+	/* color: #647577; */
+	cursor: pointer;
+	text-shadow: -2px 2px 2px #fff;
+}
+li {
+	margin: 16px 0;
+}
+ul {
+	/* list-style-position: inside; */
+	list-style-type: none;
+}
+input.date {
+	top: 48.5vh;
+	background-color: transparent;
+}
+#timer {
+	padding-top: 15px;
+}
+input.date:hover {
+	color: black;
+	text-shadow: 0 0 7px white;
+	cursor: pointer;
+}
+p span {
+	display: block;
+	font-size: 0.75em;
+	line-height: 0.8em;
+	padding-top: 0.2em;
+	margin-bottom: 0.2em;
+}
