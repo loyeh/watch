@@ -18,13 +18,13 @@ const clock = () => {
 	let second = insertZerro(date1.getSeconds());
 	dd.innerHTML = day + " " + month + "/" + date;
 	pp.innerHTML = hour + ":" + minute + "</br>" + second;
-	// larg.innerHTML = hour + ":" + minute + ":" + second;
+	larg.innerHTML = hour + ":" + minute + ":" + second;
 };
 const largeClock = () => {
 	let page1 = document.getElementById("page1");
 	page1.innerHTML = '<div id="larg"></div> <a href="index.html">WATCH</a>';
 	const larg = document.getElementById("larg");
-	larg.innerHTML = hour + ":" + minute + ":" + second;
+	//larg.innerHTML = hour + ":" + minute + ":" + second;
 	clock();
 	larg.style.display = "block";
 	larg.style.backgroundColor = "black";
