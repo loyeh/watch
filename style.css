@@ -129,6 +129,7 @@ input:hover {
 	cursor: pointer;
 	text-shadow: -2px 2px 2px #fff;
 }
+
 li {
 	margin: 16px 0;
 }
@@ -154,4 +155,12 @@ p span {
 	line-height: 0.8em;
 	padding-top: 0.2em;
 	margin-bottom: 0.2em;
+}
+#start {
+	font-size: 1.3em;
+	transform: translate(5%, -180%);
+}
+#reset {
+	font-size: 1.3em;
+	transform: translate(-105%, -180%);
 }
