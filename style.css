@@ -164,3 +164,31 @@ p span {
 	font-size: 1.3em;
 	transform: translate(-105%, -180%);
 }
+#hh {
+	transform: translate(-120%, -25%);
+	border: none;
+}
+#mm {
+	transform: translate(20%, -25%);
+	border: none;
+}
+#divider {
+	transform: translate(-50%, -45%);
+	border: none;
+	font-size: 5em;
+}
+#settimer {
+	transform: translate(-50%, -110%);
+}
+#set {
+	transform: translate(-50%, 40%);
+	font-size: 3em;
+}
+#inputTime {
+	transform: translate(-47%, -60%);
+	font-size: 2.5em;
+}
+.show {
+	display: none;
+	font-size: 1em;
+}

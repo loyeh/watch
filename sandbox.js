@@ -32,23 +32,76 @@ const largeClock = () => {
 
 const mode = () => {
 	mm.innerHTML =
-		'<ul class="menue"> <li><input type="button" value="timer" onclick="timermode()"></li> <li><input type="button" value="Stop Watch" onclick="stopWatchMode()"></li>  <li><input type="button" value="Location" onclick="location()"></li> <li><input type="button" value="Back" onclick="location.reload()"></li> </ul >';
+		'<ul class="menue"> <li><input type="button" value="timer" onclick="timerMode()"></li> <li><input type="button" value="Stop Watch" onclick="stopWatchMode()"></li>  <li><input type="button" value="Location" onclick="location()"></li> <li><input type="button" value="Back" onclick="location.reload()"></li> </ul >';
 };
 let s = 0;
 let m = 0;
 let ms = 0;
+let h = 0;
+var hh = 0;
+var mi = 0;
 var x;
+var time12 = "00";
+
 function timerMode() {
-	mm.innerHTML =
-		'<p class="center" id="stopWatch">00:00</br><span>00</span></p><input type="button" class="date start center" id="start" value="START"><input type="button" class="date reset center" id="reset" value="RESET">';
-	const ts = document.getElementById("start");
-	const tr = document.getElementById("reset");
+	clearInterval(x);
+	mm.innerHTML = `<input type="button" class="date center"  value="START"><input type="button" class="date center" id="settimer" value="Set Timer"><p class="date center" >${insertZerro(
+		hh
+	)}:${insertZerro(mi)}</p>`;
+	const tt = document.getElementById("settimer");
+	tt.onclick = function () {
+		setTimer();
+	};
+	// ts.onclick = function () {
+	// 	timer();
+	// };
+	// function start(hh, mm, ss) {}
+}
+function timer() {
+	let time = time12;
+	hh = Number(time[0] + time[1]);
+	mi = Number(time[3] + time[4]);
+	mm.innerHTML = `<input type="button" class="date center"  value="START" id="starttimer"><input type="button" class="date center" id="settimer" value="Set Timer"><p class="date center" >${insertZerro(
+		hh
+	)}:${insertZerro(mi)}</p>`;
+	const ts = document.getElementById("starttimer");
+	const tt = document.getElementById("settimer");
+	tt.onclick = function () {
+		setTimer();
+	};
 	ts.onclick = function () {
-		start();
+		startTimer();
+		x = setInterval(startTimer, 1000);
 	};
-	tr.onclick = function () {
-		reset();
+}
+function setTimer() {
+	mm.innerHTML =
+		'<input type="time" id="inputTime" class="date center"  placeholder="hh:mm" value="00:00" ><input type="button" class="date center" id="set" value="SET">';
+
+	document.getElementById("set").onclick = function () {
+		time12 = document.getElementById("inputTime").value;
+		timer();
 	};
+}
+function startTimer() {
+	// tt.onclick = function () {
+	// 	setTimer();
+	// };
+	if ((hh == 0) & (mi == 0)) {
+		document.getElementById("aaa").innerHTML = "EXPIRED";
+		document.getElementById("aaa").classList.toggle("show");
+
+		mi = 1;
+	} else {
+		mm.innerHTML = `<input type="button" class="date center"  value="BACK" onclick="timerMode()"> <p class="date center" id="aaa">${insertZerro(
+			hh
+		)}:${insertZerro(mi)}</p>`;
+	}
+	mi = mi - 1;
+	if (mi < 0) {
+		hh = hh - 1;
+		mi = 59;
+	}
 }
 
 const stopWatchMode = () => {
@@ -107,4 +160,7 @@ const stopWatchMode = () => {
 		tt.innerHTML = "00:00</br><span>00</span>";
 	}
 };
+// clock();
+// clearInterval(time);
+setTimeout(clock, 0);
 let time = setInterval(clock, 500);
