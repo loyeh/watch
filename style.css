@@ -45,6 +45,7 @@ p.center,
 	border-top: black 3px solid;
 	padding-top: 5px;
 	text-shadow: 0 0 7px black;
+	user-select: none;
 }
 .date {
 	color: #cfc;
@@ -62,6 +63,7 @@ p.center,
 	font-size: 22vw;
 	padding-top: 35vh;
 	padding-left: 4vw;
+	user-select: none;
 }
 a {
 	position: absolute;
